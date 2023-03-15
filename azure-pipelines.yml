@@ -26,6 +26,9 @@ steps:
     command: restore
     projects: '**/WebApp.csproj'
 
+- task: SonarCloudPrepare@1
+  inputs:
+    scannerMode: 'MSBuild'
 - task: DotNetCoreCLI@2
   displayName: Build Web App
   inputs:
